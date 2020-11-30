@@ -10,10 +10,10 @@ Implemented
 
 # Installation
 
-1. Clone the repo
-2. Install the dependancies - npm insall
-3. Run the applicaiton - npm start
+1. Download the code or clone the repo from git hub - git clone https://github.com/sgeek017/caavo-ui-challange
+2. Install the dependencies - npm install
+3. Run the application - npm start
 
 # Screenshots
 
-Application screenshots are uploaded in screenshot folder
+Application screenshots are uploaded in the screenshot folder
