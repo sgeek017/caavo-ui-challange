@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar class="ion-text-center">
+    <ion-title>
+      Create Group
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-grid>
+  <ion-row class="section1">
+    <ion-col size-md="4">
+      <ion-img [src]="gropuIcon"></ion-img>
+      <input name="photo" #fileInput type="file" accept="image/*" (change)="uploadImage(fileInput)" hidden>
+      <ion-button fill="clear" (click)="openFileDialog()">
+        <ion-icon color=" dark" slot="icon-only" name="camera-outline">
+        </ion-icon> &nbsp;
+        <ion-text color="dark">Group Logo</ion-text>
+      </ion-button>
+
+    </ion-col>
+    <ion-col size-md=" 4">
+      <ion-item lines="none">
+        <ion-text> Name</ion-text>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-text> Description</ion-text>
+      </ion-item>
+    </ion-col>
+    <ion-col size-md="4">
+      <ion-item lines="none">
+        <ion-button fill="outline">
+          <ion-text color="dark">Group Name</ion-text>
+        </ion-button>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-button fill="outline">
+          <ion-text color="dark">Group Description</ion-text>
+        </ion-button>
+      </ion-item>
+    </ion-col>
+    <ion-col size-xs="4">
+      <ion-item>
+        <ion-select placeholder="Select Order" interface="popover" (ionChange)="sortOrder($event)">
+          <ion-select-option value="asc">Ascending</ion-select-option>
+          <ion-select-option value="desc">Descending</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="section2">
+
+
+
+
+    <ion-col size-xs="6" size-md="3" *ngFor="let userDetails of userList">
+
+      <ion-card ion-no-padding (click)="selectUser(userDetails)">
+        <ion-checkbox class="ion-text-right" *ngIf="userDetails.selected" [checked]="userDetails.selected">
+        </ion-checkbox>
+        <ion-img [src]="userDetails.Image"></ion-img>
+        <ion-card-header class="ion-text-center">
+          <ion-card-title color="light">{{userDetails.name}}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-text-center">
+    <ion-col>
+      <ion-button color="primary">
+        <ion-text> Update</ion-text>
+      </ion-button>
+      <ion-button color="danger">
+        <ion-text> Remove </ion-text>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
